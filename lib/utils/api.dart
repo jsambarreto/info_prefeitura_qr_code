@@ -5,7 +5,6 @@ import 'dart:convert';
 
 Future<String> _loadAEscolaAsset(
     {required String id_escola, required String dsSecretaria}) async {
-  //final Future<String?> id_escola = loadIdEscola();
   var headers = {'Access-Control-Allow-Origin': '*'};
   String? idEscola = id_escola;
   String? dsSc = dsSecretaria;
@@ -14,7 +13,6 @@ Future<String> _loadAEscolaAsset(
     //Uri.parse('http://portal.wimaxi.com.br:20000/api/escolas/1000000006'),
     headers: headers,
   );
-  //print('http://portal.wimaxi.com.br:20000/api/' + dsSc + '/' + idEscola);
   return response.body;
 }
 

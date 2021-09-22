@@ -9,7 +9,9 @@ Future<String> _loadAEscolaAsset(
   String? idEscola = id_escola;
   String? dsSc = dsSecretaria;
   final response = await http.get(
-    Uri.parse('http://portal.wimaxi.com.br:20000/api/' + dsSc + '/' + idEscola),
+    Uri.parse(
+        'https://apuned.educacao.feira.br:20020/api/' + dsSc + '/' + idEscola),
+    //Uri.parse('http://portal.wimaxi.com.br:20000/api/' + dsSc + '/' + idEscola),
     //Uri.parse('http://portal.wimaxi.com.br:20000/api/escolas/1000000006'),
     headers: headers,
   );

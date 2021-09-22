@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+
 import 'package:info_prefeitura_qr_code/widgets/app_logo.dart';
+
 import '/models/escola_model.dart';
 import '/utils/api.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final String? id;
+  final String? dsSecretaria;
+  const HomePage({
+    Key? key,
+    required this.id,
+    required this.dsSecretaria,
+  }) : super(key: key);
 
   //const HomePage();
   @override
@@ -12,10 +20,12 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  late final List<String> _series;
   Widget futureWidget() {
     return FutureBuilder<Escola>(
-      future: loadEscola(),
+      future: loadEscola(
+        dsSecretar: widget.dsSecretaria as String,
+        id: widget.id as String,
+      ),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Container(

@@ -8,11 +8,7 @@ import 'dart:convert';
 Future<String> _loadAEscolaAsset(
     {required String id_escola, required String dsSecretaria}) async {
   final Map<String, String> mapHeaders = {
-    "Content-Type": "application/json; charset=UTF-8",
     "Accept": "application/json",
-    "Access-Control-Allow-Methods": "*",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "*"
   };
 
   String? idEscola = id_escola;

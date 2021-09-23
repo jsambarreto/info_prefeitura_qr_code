@@ -122,21 +122,21 @@ class HomePageState extends State<HomePage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Card(
-                      shape: RoundedRectangleBorder(
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
+                        color: Colors.blue[100],
                       ),
-                      color: Colors.blue[100],
-                      child: Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.all(10),
-                        child: const Text(
-                          'VAGAS DISPONÍVEIS: ',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      width: double.infinity,
+                      //margin:EdgeInsets.symmetric(horizontal: 4),
+                      padding: const EdgeInsets.all(8),
+                      child: const Text(
+                        'VAGAS DISPONÍVEIS: ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

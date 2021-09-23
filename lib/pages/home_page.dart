@@ -135,51 +135,53 @@ class HomePageState extends State<HomePage> {
                         'VAGAS DISPONÍVEIS: ',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: 13,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     ...snapshot.data!.series.map(
-                      (s) => Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Expanded(
-                            flex: 5,
-                            child: Container(
-                              padding: EdgeInsets.all(8),
-                              margin: EdgeInsets.only(bottom: 8),
-                              width: 50,
-                              child: Text(
-                                s.serie,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
+                      (s) => SingleChildScrollView(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Expanded(
+                              flex: 5,
+                              child: Container(
+                                padding: EdgeInsets.all(8),
+                                margin: EdgeInsets.only(bottom: 8),
+                                width: 50,
+                                child: Text(
+                                  s.serie,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.grey[400],
                                 ),
                               ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.grey[400],
+                            ),
+                            Expanded(
+                              flex: 5,
+                              child: Container(
+                                padding: EdgeInsets.all(8),
+                                margin: EdgeInsets.only(bottom: 8),
+                                width: 50,
+                                child: Text(
+                                  s.vagas,
+                                  textAlign: TextAlign.center,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.grey[300],
+                                ),
                               ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 5,
-                            child: Container(
-                              padding: EdgeInsets.all(8),
-                              margin: EdgeInsets.only(bottom: 8),
-                              width: 50,
-                              child: Text(
-                                s.vagas,
-                                textAlign: TextAlign.center,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.grey[300],
-                              ),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ],

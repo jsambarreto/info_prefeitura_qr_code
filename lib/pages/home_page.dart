@@ -35,7 +35,10 @@ class HomePageState extends State<HomePage> {
               children: [
                 Center(
                   child: Card(
-                    //shape: ShapeBorder.,
+                    margin: EdgeInsets.only(bottom: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                     color: const Color(0xFF2C2F4D),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -56,7 +59,6 @@ class HomePageState extends State<HomePage> {
                                 'Diretor(a): ',
                                 style: TextStyle(
                                   fontSize: 12,
-                                  fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
                               ),
@@ -80,6 +82,7 @@ class HomePageState extends State<HomePage> {
                     const Icon(
                       Icons.phone_iphone_outlined,
                     ),
+                    const SizedBox(width: 10),
                     Text(
                       snapshot.data!.telefone,
                       style: const TextStyle(
@@ -93,6 +96,7 @@ class HomePageState extends State<HomePage> {
                     const Icon(
                       Icons.location_on_outlined,
                     ),
+                    const SizedBox(width: 10),
                     Text(
                       snapshot.data!.endereco,
                       style: const TextStyle(
@@ -106,6 +110,7 @@ class HomePageState extends State<HomePage> {
                     const Icon(
                       Icons.email_outlined,
                     ),
+                    const SizedBox(width: 10),
                     Text(
                       snapshot.data!.email,
                       style: const TextStyle(
@@ -115,27 +120,65 @@ class HomePageState extends State<HomePage> {
                   ],
                 ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    const Text(
-                      'VAGAS DISPONÍVEIS: ',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
+                    Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      color: Colors.blue[100],
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(10),
+                        child: const Text(
+                          'VAGAS DISPONÍVEIS: ',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
                     ...snapshot.data!.series.map(
                       (s) => Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(s.serie),
-                          const Text(
-                            'VAGAS',
-                            style: TextStyle(
-                              fontSize: 12,
+                          Expanded(
+                            flex: 5,
+                            child: Container(
+                              padding: EdgeInsets.all(8),
+                              margin: EdgeInsets.only(bottom: 8),
+                              width: 50,
+                              child: Text(
+                                s.serie,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey[400],
+                              ),
                             ),
                           ),
-                          Text(s.vagas),
+                          Expanded(
+                            flex: 5,
+                            child: Container(
+                              padding: EdgeInsets.all(8),
+                              margin: EdgeInsets.only(bottom: 8),
+                              width: 50,
+                              child: Text(
+                                s.vagas,
+                                textAlign: TextAlign.center,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.grey[300],
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

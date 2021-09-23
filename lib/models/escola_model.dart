@@ -17,9 +17,8 @@ class Escola {
     required this.telefone,
     required this.latitude,
     required this.longitude,
-    required this.logradouro,
-    required this.numero,
-    required this.bairro,
+    required this.endereco,
+    required this.email,
     required this.series,
   });
 
@@ -30,9 +29,8 @@ class Escola {
   String telefone;
   String latitude;
   String longitude;
-  String logradouro;
-  String numero;
-  String bairro;
+  String endereco;
+  String email;
   List<Series> series;
 
   factory Escola.fromJson(Map<String, dynamic> json) => Escola(
@@ -43,9 +41,8 @@ class Escola {
         telefone: json["TELEFONE"],
         latitude: json["LATITUDE"],
         longitude: json["LONGITUDE"],
-        logradouro: json["LOGRADOURO"],
-        numero: json["NUMERO"],
-        bairro: json["BAIRRO"],
+        endereco: json["ENDERECO"],
+        email: json["EMAIL"],
         series:
             List<Series>.from(json["SERIES"].map((x) => Series.fromJson(x))),
       );
@@ -58,9 +55,8 @@ class Escola {
         "TELEFONE": telefone,
         "LATITUDE": latitude,
         "LONGITUDE": longitude,
-        "LOGRADOURO": logradouro,
-        "NUMERO": numero,
-        "BAIRRO": bairro,
+        "ENDERECO": endereco,
+        "EMAIL": email,
         "SERIES": List<dynamic>.from(series.map((x) => x.toJson())),
       };
 }

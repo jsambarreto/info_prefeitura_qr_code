@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:http/http.dart' as http;
 import '../models/escola_model.dart';
 import 'dart:async';
@@ -6,20 +8,21 @@ import 'dart:convert';
 Future<String> _loadAEscolaAsset(
     {required String id_escola, required String dsSecretaria}) async {
   final Map<String, String> mapHeaders = {
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Access-Control-Allow-Methods': '*',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*'
+    "Content-Type": "application/json; charset=UTF-8",
+    "Accept": "application/json",
+    "Access-Control-Allow-Methods": "*",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "*"
   };
+
   String? idEscola = id_escola;
   String? dsSc = dsSecretaria;
   final response = await http.get(
-    Uri.parse(
-        'https://apuned.educacao.feira.br:20020/api/' + dsSc + '/' + idEscola),
-    //Uri.parse('http://portal.wimaxi.com.br:20000/api/' + dsSc + '/' + idEscola),
-    //Uri.parse('http://portal.wimaxi.com.br:20000/api/escolas/1000000006'),
-    headers: mapHeaders,
-  );
+      Uri.parse('https://apuned.educacao.feira.br:20020/api/' +
+          dsSc +
+          '/' +
+          idEscola),
+      headers: mapHeaders);
   return response.body;
 }
 

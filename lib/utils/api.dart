@@ -17,6 +17,7 @@ Future<String> _loadAEscolaAsset(
 
   String? idEscola = id_escola;
   String? dsSc = dsSecretaria;
+  await wait(2);
   final response = await http.get(
       Uri.parse('https://apuned.educacao.feira.br:20020/api/' +
           dsSc +
@@ -30,7 +31,7 @@ Future<Escola> loadEscola(
     {required String id, required String dsSecretar}) async {
   String? idEscola = id;
   String? dsSecretaria = dsSecretar;
-  await wait(5);
+  await wait(2);
   String jsonString =
       await _loadAEscolaAsset(id_escola: idEscola, dsSecretaria: dsSecretaria);
   final jsonResponse = json.decode(jsonString);

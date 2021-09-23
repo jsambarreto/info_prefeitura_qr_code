@@ -121,19 +121,22 @@ class HomePageState extends State<HomePage> {
                               ),
                             ),
                             ...snapshot.data!.series.map(
-                              (s) => Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Text(s.serie),
-                                  const Text(
-                                    'VAGAS',
-                                    style: TextStyle(
-                                      fontSize: 12,
+                              (s) => Container(
+                                width: 100,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(s.serie),
+                                    const Text(
+                                      'VAGAS',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                      ),
                                     ),
-                                  ),
-                                  Text(s.vagas),
-                                ],
+                                    Text(s.vagas),
+                                  ],
+                                ),
                               ),
                             ),
                           ],

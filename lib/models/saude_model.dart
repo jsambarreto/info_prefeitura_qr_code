@@ -1,6 +1,6 @@
 // To parse this JSON data, do
 //
-//     final UnidadeSaude = UnidadeSaudeFromJson(jsonString);
+//     final UnidadeSaude = unidadeSaudeFromJson(jsonString);
 
 import 'package:meta/meta.dart';
 import 'dart:convert';

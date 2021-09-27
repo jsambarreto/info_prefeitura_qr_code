@@ -1,0 +1,17 @@
+{
+    "ID_ESCOLA": "1000000001",
+    "ESCOLA_RESUMIDO": "POLICLÍNICA OSVALDO MONTEIRO PIRAJA – TOMBA",
+    "ESCOLA_COMPLETO": "POLICLÍNICA OSVALDO MONTEIRO PIRAJA – TOMBA",
+    "DIRETOR": "SR. JOSÉ PIRES LEAL",
+    "TELEFONE": "36124532; 36124531",
+    "LATITUDE": "-12.258490",
+    "LONGITUDE": "-38.946760",
+    "ENDERECO": "RUA DO MÉXICO - TOMBA",
+    "EMAIL": "policlinicatomba@gmail.com",                                                    
+    "SERVICOS": [
+        {
+        "exame": "Raio-x",
+        "consulta": "cardiologia"
+        }
+    ]
+}

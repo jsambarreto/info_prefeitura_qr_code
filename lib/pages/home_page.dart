@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:info_prefeitura_qr_code/models/saude_model.dart';
+import 'package:info_prefeitura_qr_code/utils/api_arq.dart';
 
 import 'package:info_prefeitura_qr_code/widgets/app_logo.dart';
 import 'package:info_prefeitura_qr_code/widgets/series_widget.dart';
@@ -138,10 +139,11 @@ class HomePageState extends State<HomePage> {
             ),
           if (widget.dsSecretaria == 'saude')
             FutureBuilder<UnidadeSaude>(
-              future: loadUnidadeSaude(
-                dsSecretar: widget.dsSecretaria as String,
-                id: widget.id as String,
-              ),
+              future: carregaUnidade(),
+              //loadUnidadeSaude(
+              //  dsSecretar: widget.dsSecretaria as String,
+              // id: widget.id as String,
+              //),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return SingleChildScrollView(

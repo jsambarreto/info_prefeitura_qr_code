@@ -28,99 +28,99 @@ class HomePageState extends State<HomePage> {
       ),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return Container(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Card(
-                    margin: EdgeInsets.only(bottom: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    color: const Color(0xFF2C2F4D),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        children: [
-                          Text(
-                            snapshot.data!.escolaResumido,
-                            style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+          return SingleChildScrollView(
+            child: Container(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Card(
+                      margin: EdgeInsets.only(bottom: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      color: const Color(0xFF2C2F4D),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          children: [
+                            Text(
+                              snapshot.data!.escolaResumido,
+                              style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'Diretor(a): ',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'Diretor(a): ',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                snapshot.data?.diretor ?? ' ',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white,
+                                Text(
+                                  snapshot.data?.diretor ?? ' ',
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Icon(
-                      Icons.phone_iphone_outlined,
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      snapshot.data!.telefone,
-                      style: const TextStyle(
-                        fontSize: 12,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.phone_iphone_outlined,
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.location_on_outlined,
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      snapshot.data!.endereco,
-                      style: const TextStyle(
-                        fontSize: 12,
+                      const SizedBox(width: 10),
+                      Text(
+                        snapshot.data!.telefone,
+                        style: const TextStyle(
+                          fontSize: 12,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.email_outlined,
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      snapshot.data!.email,
-                      style: const TextStyle(
-                        fontSize: 12,
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.location_on_outlined,
                       ),
-                    ),
-                  ],
-                ),
-                SingleChildScrollView(
-                  child: Column(
+                      const SizedBox(width: 10),
+                      Text(
+                        snapshot.data!.endereco,
+                        style: const TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.email_outlined,
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        snapshot.data!.email,
+                        style: const TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
@@ -185,8 +185,8 @@ class HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         } else if (snapshot.hasError) {

@@ -29,8 +29,17 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Image.asset('assets/images/banner_splash.jpg'),
+      body: Column(
+        children: [
+          if (dsSecretaria == 'escolas')
+            Center(
+              child: Image.asset('assets/images/banner_splash.jpg'),
+            ),
+          if (dsSecretaria == 'saude')
+            Center(
+              child: Image.asset('assets/images/banner_splash_saude.jpg'),
+            ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

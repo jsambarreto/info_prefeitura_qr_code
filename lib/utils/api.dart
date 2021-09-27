@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:http/http.dart' as http;
+import 'package:info_prefeitura_qr_code/models/saude_model.dart';
 import '../models/escola_model.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -31,6 +30,17 @@ Future<Escola> loadEscola(
       await _loadAEscolaAsset(id_escola: idEscola, dsSecretaria: dsSecretaria);
   final jsonResponse = json.decode(jsonString);
   return Escola.fromJson(jsonResponse);
+}
+
+Future<UnidadeSaude> loadUnidadeSaude(
+    {required String id, required String dsSecretar}) async {
+  String? idEscola = id;
+  String? dsSecretaria = dsSecretar;
+  await wait(2);
+  String jsonString =
+      await _loadAEscolaAsset(id_escola: idEscola, dsSecretaria: dsSecretaria);
+  final jsonResponse = json.decode(jsonString);
+  return UnidadeSaude.fromJson(jsonResponse);
 }
 
 Future wait(int seconds) {

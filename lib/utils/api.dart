@@ -13,7 +13,6 @@ Future<String> _loadAEscolaAsset(
 
   String? idEscola = id_escola;
   String? dsSc = dsSecretaria;
-  await wait(2);
   final response = await http.get(
       Uri.parse('https://apuned.educacao.feira.br:20020/api/' +
           dsSc +

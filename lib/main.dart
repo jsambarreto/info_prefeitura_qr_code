@@ -34,8 +34,7 @@ class Splash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.network(
-            'https://instagram.fssa13-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/240578303_525229025435740_7854877106617444171_n.jpg?_nc_ht=instagram.fssa13-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=0Rol6yRpjlYAX9bEvJa&edm=AP_V10EBAAAA&ccb=7-4&oh=637b99fb7a73aafbc0aaf135701b06c7&oe=6157C952&_nc_sid=4f375e'),
+        child: Image.asset('assets/images/banner_splash.jpg'),
       ),
       //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(

@@ -161,7 +161,7 @@ class HomePageState extends State<HomePage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              color: const Color(0xFF2C2F4D),
+                              color: const Color(0xFFF8992D),
                               child: Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Column(

@@ -139,7 +139,10 @@ class HomePageState extends State<HomePage> {
             ),
           if (widget.dsSecretaria == 'saude')
             FutureBuilder<UnidadeSaude>(
-              future: carregaUnidade(),
+              future: carregaUnidade(
+                id: widget.id,
+                dsSecretaria: widget.dsSecretaria,
+              ),
               //loadUnidadeSaude(
               //  dsSecretar: widget.dsSecretaria as String,
               // id: widget.id as String,

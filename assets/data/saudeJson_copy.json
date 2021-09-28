@@ -12,7 +12,8 @@
         "SERVICOS": [
             {
             "exame": "Raio-x",
-            "consulta": "cardiologia"
+            "consulta": "cardiologia",
+            "vacinas": "Pfizer"
             }
         ]
     },
@@ -30,7 +31,9 @@
         "SERVICOS": [
             {
             "exame": "Raio-x",
-            "consulta": "cardiologia"
+            "exame2": "Hemograma",
+            "consulta": "cardiologia",
+            "consulta2": "clinico geral"
             }
             ]
     },
@@ -46,8 +49,9 @@
         "EMAIL": "policlinicaruanova@gmail.com",                                                   
         "SERVICOS": [
             {
-            "exame": "Raio-x",
-            "consulta": "cardiologia"
+            "exame": "Hemograma",
+            "consulta": "clinico geral",
+            "consulta2": "pneumologista"
             }
             ]
     },
